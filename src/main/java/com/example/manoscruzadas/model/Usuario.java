@@ -13,7 +13,8 @@ import java.util.Date;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO) //Genera automaticamente el valor de ID
-    private long id_usuario;
+    @Column(name = "id_usuario")
+    private long idUsuario;
 
     @Column(name = "nombre")
     private String nombre;
@@ -48,12 +49,12 @@ public class Usuario {
 
     }
 
-    public long getId_usuario() {
-        return id_usuario;
+    public long getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setId_usuario(long id_usuario) {
-        this.id_usuario = id_usuario;
+    public void setIdUsuario(long id_usuario) {
+        this.idUsuario = id_usuario;
     }
 
     public String getNombre() {

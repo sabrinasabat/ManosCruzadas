@@ -12,7 +12,8 @@ import java.time.LocalDateTime;
 public class Matches {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO) //Genera automaticamente el valor de ID
-    private long id_match;
+    @Column(name = "id_match")
+    private long idMatch;
 
     @Column(name = "fecha_match", updatable = false) //no se puede actualizar
     @CreationTimestamp //crea automaticamente la fecha
@@ -40,12 +41,12 @@ public class Matches {
 
     }
 
-    public long getId_match() {
-        return id_match;
+    public long getIdMatch() {
+        return idMatch;
     }
 
-    public void setId_match(long id_match) {
-        this.id_match = id_match;
+    public void setIdMatch(long idMatch) {
+        this.idMatch = idMatch;
     }
 
     public LocalDateTime getFecha_match() {

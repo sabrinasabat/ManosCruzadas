@@ -8,7 +8,8 @@ import jakarta.persistence.*;
 public class SubCategoria {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO) //Genera automaticamente el valor de ID
-    private long id_subcategoria;
+    @Column(name = "id_subcategoria")
+    private long idSubcategoria;
 
     @Column(name = "nombre")
     private String nombre;
@@ -28,12 +29,12 @@ public class SubCategoria {
 
     }
 
-    public long getId_subcategoria() {
-        return id_subcategoria;
+    public long getIdSubcategoria() {
+        return idSubcategoria;
     }
 
-    public void setId_subcategoria(long id_subcategoria) {
-        this.id_subcategoria = id_subcategoria;
+    public void setIdSubcategoria(long idSubcategoria) {
+        this.idSubcategoria = idSubcategoria;
     }
 
     public String getNombre() {

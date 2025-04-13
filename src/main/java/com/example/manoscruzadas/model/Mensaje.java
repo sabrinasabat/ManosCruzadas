@@ -11,7 +11,8 @@ import java.time.LocalDateTime;
 public class Mensaje {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO) //Genera automaticamente el ID
-    private long id_mensaje;
+    @Column(name = "id_mensaje")
+    private long idMensaje;
 
     @Column(name = "mensaje")
     private String mensaje;
@@ -22,34 +23,34 @@ public class Mensaje {
 
     @ManyToOne //relacion uno a muchos, así como tenemos en la ddbb
     @JoinColumn(name = "id_usuario_remitente", referencedColumnName = "id_usuario") //JoinColumn especifica la columna de mensaje y referencedColumnName la columna de usuario
-    private Usuario usuario_remitente;
+    private Usuario usuarioRemitente;
 
     @ManyToOne //relacion uno a muchos, así como tenemos en la ddbb
     @JoinColumn(name = "id_usuario_destinatario", referencedColumnName = "id_usuario") //JoinColumn especifica la columna de mensaje y referencedColumnName la columna de usuario
-    private Usuario usuario_destinatario;
+    private Usuario usuarioDestinatario;
 
     @ManyToOne //relacion uno a muchos, así como tenemos en la ddbb
     @JoinColumn(name = "id_match", referencedColumnName = "id_match") //JoinColumn especifica la columna de mensaje y referencedColumnName la columna de match
     private Matches match;
 
     //no hace falta pasar el fecha_envio en el constructor, ya que se genera automaticamente, así como el id
-    public Mensaje(String mensaje, Usuario usuario_remitente, Usuario usuario_destinatario, Matches id_match){
+    public Mensaje(String mensaje, Usuario usuarioRemitente, Usuario usuarioDestinatario, Matches match){
         this.mensaje = mensaje;
-        this.usuario_remitente = usuario_remitente;
-        this.usuario_destinatario = usuario_destinatario;
-        this.match = id_match;
+        this.usuarioRemitente = usuarioRemitente;
+        this.usuarioDestinatario = usuarioDestinatario;
+        this.match = match;
     }
 
     public Mensaje(){
 
     }
 
-    public long getId_mensaje() {
-        return id_mensaje;
+    public long getIdMensaje() {
+        return idMensaje;
     }
 
-    public void setId_mensaje(long id_mensaje) {
-        this.id_mensaje = id_mensaje;
+    public void setIdMensaje(long id_mensaje) {
+        this.idMensaje = id_mensaje;
     }
 
     public String getMensaje() {
@@ -68,27 +69,27 @@ public class Mensaje {
         this.fecha_envio = fecha_envio;
     }
 
-    public Usuario getUsuario_remitente() {
-        return usuario_remitente;
+    public Usuario getUsuarioRemitente() {
+        return usuarioRemitente;
     }
 
-    public void setUsuario_remitente(Usuario usuario_remitente) {
-        this.usuario_remitente = usuario_remitente;
+    public void setUsuarioRemitente(Usuario usuarioRemitente) {
+        this.usuarioRemitente = usuarioRemitente;
     }
 
-    public Usuario getUsuario_destinatario() {
-        return usuario_destinatario;
+    public Usuario getUsuarioDestinatario() {
+        return usuarioDestinatario;
     }
 
-    public void setUsuario_destinatario(Usuario usuario_destinatario) {
-        this.usuario_destinatario = usuario_destinatario;
+    public void setUsuarioDestinatario(Usuario usuarioDestinatario) {
+        this.usuarioDestinatario = usuarioDestinatario;
     }
 
     public Matches getMatch() {
         return match;
     }
 
-    public void setMatch(Matches id_match) {
-        this.match = id_match;
+    public void setMatch(Matches match) {
+        this.match = match;
     }
 }
