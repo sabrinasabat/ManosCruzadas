@@ -1,0 +1,9 @@
+<h2>Listado de Mensajes</h2>
+
+<ul>
+  <li *ngFor="let mensaje of mensajes ">
+    <i>{{mensaje.mensaje}}</i><br><br>
+    <strong>Quién envió el mensaje: </strong>{{mensaje.usuarioRemitente?.nombre}}<br>
+    <strong>Para quién fue enviado:</strong> {{mensaje.usuarioDestinatario?.nombre}}
+  </li>
+</ul>

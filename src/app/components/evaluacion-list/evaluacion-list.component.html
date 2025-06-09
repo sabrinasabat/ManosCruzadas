@@ -1,0 +1,10 @@
+<h2>Listado de Evaluaciones</h2>
+
+<ul>
+  <li *ngFor="let evaluacion of evaluaciones">
+    <strong>Nota:</strong> {{evaluacion.nota}}<br>
+    <strong>Comentario:</strong> {{evaluacion.comentario}}<br>
+    <strong>Evaluador: </strong> {{evaluacion.evaluador.nombre}}<br>
+    <strong>Evaluado: </strong>{{evaluacion.evaluado.nombre}}<br>
+  </li>
+</ul>

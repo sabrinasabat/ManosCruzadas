@@ -1,0 +1,10 @@
+<h2>Listado de Subcategorías</h2>
+
+<ul>
+  <li *ngFor="let subcategoria of subcategoria">
+    <strong>{{subcategoria.nombre}}</strong>
+    <span *ngIf="subcategoria.categoria">
+      - Categoría: {{subcategoria.categoria.nombre}}
+    </span>
+  </li>
+</ul>

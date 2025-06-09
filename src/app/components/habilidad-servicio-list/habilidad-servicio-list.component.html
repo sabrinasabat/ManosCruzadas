@@ -1,0 +1,10 @@
+<h2>Listado de Habilidades y Servicios</h2>
+
+<ul>
+  <!-- bucle for sobre el listado y enseño los datos-->
+  <li *ngFor="let habilidadServicio of habilidadesServicios">
+    <strong>{{habilidadServicio.tipo}}:</strong> {{habilidadServicio.descripcion}}<br>
+    <strong>Usuario:</strong> {{habilidadServicio.usuario?.nombre}}<br>
+    <strong>Habilidad:</strong> {{habilidadServicio.subCategoria?.nombre}}
+  </li>
+</ul>

@@ -1,0 +1,9 @@
+<h2> Listado de Matches </h2>
+
+<ul>
+  <li *ngFor="let match of matches">
+    <strong>Fecha del Match: </strong>{{match.fecha_match}}<br>
+    <strong>Usuarios Participantes del Match: </strong> {{match.usuario1.nombre}} -- {{match.usuario2.nombre}}<br>
+    <strong>Status: </strong>{{match.status}}
+  </li>
+</ul>
